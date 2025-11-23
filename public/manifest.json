@@ -1,0 +1,21 @@
+{
+  "name": "VolunteerClear - Volunteer Background Check Management",
+  "short_name": "VolunteerClear",
+  "description": "Streamline volunteer background checks and clearance tracking. Keep kids safe and stay compliant.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

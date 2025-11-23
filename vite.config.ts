@@ -19,4 +19,6 @@ export default defineConfig({
     // Chunk size warnings
     chunkSizeWarningLimit: 1000,
   },
+  // SEO-friendly base URL
+  base: '/',
 })

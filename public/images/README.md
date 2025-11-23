@@ -1,42 +1,39 @@
 # Images Directory
 
-This directory contains static images and assets for the VolunteerClear marketing website.
+## Required Images for SEO
 
-## Required Images
+To complete SEO optimization, add the following images to this directory:
 
-The following images should be added to this directory:
+### Social Media & SEO
+- **og-image.jpg** (1200x630px) - Open Graph image for social media sharing
+  - Should showcase the VolunteerClear platform or key benefit
+  - Include branding and clear value proposition
+  - Optimized file size (< 300KB)
 
-### Hero Section
-- `hero-bg.jpg` - Background image for hero section (recommended: 1920x1080px)
+### PWA Icons
+- **icon-192.png** (192x192px) - PWA icon for mobile devices
+- **icon-512.png** (512x512px) - PWA icon for high-res displays
+- **logo.png** - Company logo for structured data
 
-### Open Graph / Social Media
-- `og-image.jpg` - Social media preview image (recommended: 1200x630px)
-  - Should include VolunteerClear branding and key value proposition
+### Favicon
+Replace `/vite.svg` in index.html with a proper favicon:
+- **favicon.ico** (32x32px) - Standard favicon
+- **favicon-16x16.png** (16x16px) - Small favicon
+- **favicon-32x32.png** (32x32px) - Standard favicon
+- **apple-touch-icon.png** (180x180px) - iOS home screen icon
 
-### Icons (Optional - Currently using Heroicons)
-- `security-icon.svg` - Security/lock icon
-- `safety-icon.svg` - Shield/safety icon  
-- `ease-icon.svg` - Simplicity/ease of use icon
+## Image Optimization Tips
 
-### UI Screenshots
-- `dashboard-preview.png` - Screenshot of the main dashboard (for ease-of-use section)
-  - Recommended: 1200x800px
-  - Should show the compliance dashboard with sample data
-
-## Image Optimization Guidelines
-
-All images should be optimized for web:
-
-1. **Format**: Use WebP format with JPEG/PNG fallbacks
-2. **Compression**: Compress images to < 200KB each
-3. **Responsive**: Provide multiple sizes for responsive images
-4. **Alt Text**: Ensure all images have descriptive alt text in components
+1. Use WebP format for better compression (with JPG/PNG fallbacks)
+2. Compress images before uploading (use tools like TinyPNG, Squoosh)
+3. Include descriptive alt text in all image tags
+4. Use responsive images with srcset when appropriate
+5. Lazy load images below the fold
 
 ## Current Status
 
-Currently, the website uses:
-- Heroicons for all icon needs (no custom icons required)
-- CSS gradients and shapes for visual elements
-- Placeholder backgrounds where images would go
-
-To add real images, simply place them in this directory and update the component references.
+- [ ] og-image.jpg
+- [ ] icon-192.png
+- [ ] icon-512.png
+- [ ] logo.png
+- [ ] favicon files
