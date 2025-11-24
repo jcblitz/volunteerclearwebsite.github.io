@@ -8,28 +8,28 @@ const pricingTiers: PricingTier[] = [
     id: 'starter',
     name: 'Starter',
     price: 'Free',
-    period: 'forever',
+    period: 'during early access',
     description: 'Perfect for small organizations just getting started',
     features: [
-      'Up to 5 volunteers',
+      'Up to 50 volunteers',
       '1 organization',
-      'Basic features',
+      'All core features',
       'Document upload & storage',
       'Compliance dashboard',
       'Email support',
     ],
-    cta: 'Get Started Free',
+    cta: 'Join Early Access',
     ctaLink: '#contact',
     highlighted: false,
   },
   {
     id: 'professional',
     name: 'Professional',
-    price: '$79',
-    period: 'per month',
+    price: 'Free',
+    period: 'during early access',
     description: 'Best for growing organizations with more volunteers',
     features: [
-      'Up to 25 volunteers',
+      'Up to 250 volunteers',
       '1 organization',
       'All features',
       'Custom clearance types',
@@ -37,15 +37,15 @@ const pricingTiers: PricingTier[] = [
       'Priority support',
       'Advanced reporting',
     ],
-    cta: 'Start Free Trial',
+    cta: 'Join Early Access',
     ctaLink: '#contact',
     highlighted: true,
   },
   {
     id: 'enterprise',
     name: 'Enterprise',
-    price: 'Custom',
-    period: 'pricing',
+    price: 'Free',
+    period: 'during early access',
     description: 'For large organizations with complex needs',
     features: [
       'Unlimited volunteers',
@@ -57,7 +57,7 @@ const pricingTiers: PricingTier[] = [
       'SLA guarantee',
       'Training & onboarding',
     ],
-    cta: 'Contact Sales',
+    cta: 'Join Early Access',
     ctaLink: '#contact',
     highlighted: false,
   },
@@ -68,11 +68,16 @@ const pricingTiers: PricingTier[] = [
   <section id="pricing" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
+        <div class="inline-block mb-4">
+          <span class="bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold">
+            🎉 Early Access - All Features Free
+          </span>
+        </div>
         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-          Simple, Transparent Pricing
+          Join Our Early Access Program
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Choose the plan that fits your organization's needs
+          Get full access to all features completely free during our early access period. Help us build the best volunteer management platform.
         </p>
       </div>
 
@@ -91,10 +96,10 @@ const pricingTiers: PricingTier[] = [
           <!-- Popular Badge -->
           <div
             v-if="tier.highlighted"
-            class="absolute -top-4 left-1/2 transform -translate-x-1/2"
+            class="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10"
           >
-            <span class="bg-primary-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-              Most Popular
+            <span class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg border-2 border-white">
+              ⭐ Recommended
             </span>
           </div>
 
@@ -136,9 +141,12 @@ const pricingTiers: PricingTier[] = [
       </div>
 
       <!-- Additional Info -->
-      <div class="mt-12 text-center">
-        <p class="text-gray-600">
-          Start with our free plan. Upgrade anytime as your organization grows. No credit card required.
+      <div class="mt-12 text-center space-y-4">
+        <p class="text-gray-900 font-semibold text-lg">
+          All tiers are completely free during early access
+        </p>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          No credit card required. No hidden fees. Join now and lock in special pricing when we launch. Early access members will receive exclusive benefits and grandfathered rates.
         </p>
       </div>
     </div>
