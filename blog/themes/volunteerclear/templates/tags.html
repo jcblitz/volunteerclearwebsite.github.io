@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Tags - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<h1 class="archive-title">Tags</h1>
+
+<section id="content">
+    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; max-width: 800px; margin: 0 auto;">
+        {% for tag, articles in tags|sort %}
+        <a href="{{ SITEURL }}/{{ tag.url }}" 
+           style="display: inline-block; background: var(--primary-50); color: var(--primary-700); padding: 0.5rem 1rem; border-radius: 9999px; text-decoration: none; font-weight: 500; transition: all 0.2s;">
+            {{ tag }} ({{ articles|count }})
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -33,6 +33,10 @@ dist-ssr
 dist/
 build/
 
+# Pelican blog output
+blog/output/
+blog/*.pid
+
 # Vite
 .vite/
 .vite-temp/

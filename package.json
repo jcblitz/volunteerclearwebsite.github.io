@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "vue-tsc -b && vite build && npm run build:blog",
+    "build:blog": "cd blog && make publish && cd .. && mkdir -p dist/blog && cp -r blog/output/* dist/blog/",
     "preview": "vite preview"
   },
   "dependencies": {

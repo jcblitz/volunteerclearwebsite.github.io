@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Archives - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<h1 class="archive-title">Archives</h1>
+
+<section id="content">
+    {% for article in dates %}
+    <article style="margin-bottom: 2rem;">
+        <h2 class="entry-title">
+            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a>
+        </h2>
+        <footer class="post-info">
+            <abbr class="published" title="{{ article.date.isoformat() }}">
+                {{ article.locale_date }}
+            </abbr>
+            {% if article.author %}
+            <address class="vcard author">
+                By <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
+            </address>
+            {% endif %}
+        </footer>
+        <div class="summary">
+            {{ article.summary }}
+        </div>
+    </article>
+    {% endfor %}
+</section>
+{% endblock %}

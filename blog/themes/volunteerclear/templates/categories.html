@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Categories - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<h1 class="archive-title">Categories</h1>
+
+<section id="content">
+    <ul style="list-style: none; padding: 0;">
+        {% for category, articles in categories %}
+        <li style="margin-bottom: 2rem; background: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">
+                <a href="{{ SITEURL }}/{{ category.url }}" style="color: var(--primary-600); text-decoration: none;">{{ category }}</a>
+            </h2>
+            <p style="color: var(--gray-600);">{{ articles|count }} article{% if articles|count != 1 %}s{% endif %}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

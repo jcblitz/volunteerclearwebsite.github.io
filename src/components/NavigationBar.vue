@@ -10,6 +10,7 @@ const navLinks = [
   { name: 'Home', href: '#hero' },
   { name: 'Features', href: '#features' },
   { name: 'Pricing', href: '#pricing' },
+  { name: 'Blog', href: '/blog/', external: true },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -71,7 +72,7 @@ onUnmounted(() => {
               'font-medium transition-colors hover:text-primary-600',
               isScrolled ? 'text-gray-700' : 'text-white',
             ]"
-            @click.prevent="scrollToSection(link.href)"
+            @click="(e) => { if (!link.external) { e.preventDefault(); scrollToSection(link.href); } }"
           >
             {{ link.name }}
           </a>
@@ -122,7 +123,7 @@ onUnmounted(() => {
             :key="link.name"
             :href="link.href"
             class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50"
-            @click.prevent="scrollToSection(link.href)"
+            @click="(e) => { if (!link.external) { e.preventDefault(); scrollToSection(link.href); } }"
           >
             {{ link.name }}
           </a>

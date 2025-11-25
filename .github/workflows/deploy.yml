@@ -31,8 +31,26 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Build
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          node-version: '3.11'
+      
+      - name: Install Pelican
+        run: |
+          pip install -r blog/requirements.txt
+      
+      - name: Build Blog
+        run: |
+          cd blog && make publish
+      
+      - name: Build Vue App
         run: npm run build
+      
+      - name: Copy Blog to Dist
+        run: |
+          mkdir -p dist/blog
+          cp -r blog/output/* dist/blog/
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

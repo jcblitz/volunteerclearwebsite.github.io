@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    
+    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    
+    {% if article %}
+    <meta name="description" content="{{ article.summary|striptags|truncate(160) }}" />
+    <meta name="author" content="{{ article.author }}" />
+    {% if article.tags %}
+    <meta name="keywords" content="{{ article.tags|join(', ') }}" />
+    {% endif %}
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ article.title }}" />
+    <meta property="og:description" content="{{ article.summary|striptags|truncate(160) }}" />
+    <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+    <meta property="og:site_name" content="{{ SITENAME }}" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ article.title }}" />
+    <meta name="twitter:description" content="{{ article.summary|striptags|truncate(160) }}" />
+    {% elif page %}
+    <meta name="description" content="{{ page.summary|striptags|truncate(160) }}" />
+    {% else %}
+    <meta name="description" content="{{ SITESUBTITLE }}" />
+    {% endif %}
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" />
+    
+    {% if FEED_ALL_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+    {% endif %}
+    
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body id="{% block body_id %}index{% endblock %}" class="{% block body_class %}home{% endblock %}">
+    <header id="banner" class="body">
+        <div class="container">
+            <h1>
+                <a href="{{ SITEURL }}/">{{ SITENAME }} {% if SITESUBTITLE %}<strong>{{ SITESUBTITLE }}</strong>{% endif %}</a>
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="/">← Back to VolunteerClear</a></li>
+                    {% for title, link in MENUITEMS %}
+                    <li><a href="{{ link }}">{{ title }}</a></li>
+                    {% endfor %}
+                    {% if DISPLAY_PAGES_ON_MENU %}
+                    {% for p in pages %}
+                    <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                    {% if DISPLAY_CATEGORIES_ON_MENU %}
+                    {% for cat, null in categories %}
+                    <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer id="contentinfo" class="body">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                {% if LINKS %}
+                <div>
+                    <h2>Quick Links</h2>
+                    <ul>
+                        {% for name, link in LINKS %}
+                        <li><a href="{{ link }}">{{ name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                
+                {% if SOCIAL %}
+                <div>
+                    <h2>Connect</h2>
+                    <ul>
+                        {% for name, link in SOCIAL %}
+                        <li><a href="{{ link }}" rel="me">{{ name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                
+                <div>
+                    <h2>Categories</h2>
+                    <ul>
+                        {% for cat, null in categories %}
+                        <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+            <p>&copy; {{ dates[-1].date.year if dates else '' }} VolunteerClear. All rights reserved. | Powered by <a href="https://getpelican.com/">Pelican</a></p>
+        </div>
+    </footer>
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>
