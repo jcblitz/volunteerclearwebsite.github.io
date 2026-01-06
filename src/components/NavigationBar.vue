@@ -76,6 +76,17 @@ onUnmounted(() => {
           >
             {{ link.name }}
           </a>
+          <a
+            href="https://app.volunteerclear.com/login"
+            target="_blank"
+            rel="noopener noreferrer"
+            :class="[
+              'font-medium transition-colors hover:text-primary-600',
+              isScrolled ? 'text-gray-700' : 'text-white',
+            ]"
+          >
+            Sign In
+          </a>
           <CTAButton
             text="Get Started"
             variant="primary"
@@ -126,6 +137,14 @@ onUnmounted(() => {
             @click="(e) => { if (!link.external) { e.preventDefault(); scrollToSection(link.href); } }"
           >
             {{ link.name }}
+          </a>
+          <a
+            href="https://app.volunteerclear.com/login"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50"
+          >
+            Sign In
           </a>
           <div class="pt-2">
             <CTAButton
