@@ -37,4 +37,5 @@ export interface CTAButtonProps {
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   href?: string;
+  target?: string;
 }

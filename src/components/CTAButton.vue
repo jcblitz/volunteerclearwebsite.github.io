@@ -50,6 +50,7 @@ const handleClick = () => {
   <component
     :is="href ? 'a' : 'button'"
     :href="href"
+    :target="target"
     :style="getVariantStyles()"
     :class="[
       'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200',

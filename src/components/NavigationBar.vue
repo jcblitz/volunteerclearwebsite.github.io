@@ -91,8 +91,8 @@ onUnmounted(() => {
             text="Get Started"
             variant="primary"
             size="sm"
-            href="#contact"
-            @click="scrollToSection('#contact')"
+            href="https://app.volunteerclear.com/register"
+            target="_blank"
           />
         </div>
 
@@ -151,9 +151,9 @@ onUnmounted(() => {
               text="Get Started"
               variant="primary"
               size="md"
-              href="#contact"
+              href="https://app.volunteerclear.com/register"
+              target="_blank"
               class="w-full"
-              @click="scrollToSection('#contact')"
             />
           </div>
         </div>

@@ -28,7 +28,8 @@ import CTAButton from './CTAButton.vue';
             text="Start Free Trial"
             variant="secondary"
             size="lg"
-            href="https://app.volunteerclear.com/login"
+            href="https://app.volunteerclear.com/register"
+            target="_blank"
           />
           <CTAButton
             text="Watch Demo"
